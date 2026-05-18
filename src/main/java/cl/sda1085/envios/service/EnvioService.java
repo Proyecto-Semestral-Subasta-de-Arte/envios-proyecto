@@ -35,7 +35,9 @@ public class EnvioService {
     }
 
 
+    //------------------------------
     //CRUD estándar
+    //------------------------------
 
     //Obtener todos los envíos
     public List<EnvioResponseDTO> obtenerTodos() {
@@ -73,11 +75,12 @@ public class EnvioService {
         return mapToResponseDTO(envioGuardado);
     }
 
-    //Actualizar envío
+    //Actualizar envío existente
     @Transactional
     public Optional<EnvioResponseDTO> actualizar(Long id, EnvioRequestDTO dto) {
         log.info("Actualizando envío ID: {}", id);
         return envioRepository.findById(id).map(envioExistente -> {
+            envioExistente.setIdSubasta(dto.getIdSubasta());
             envioExistente.setDireccion(dto.getDireccion());
             envioExistente.setEstadoEnvio(dto.getEstadoEnvio());
             return mapToResponseDTO(envioRepository.save(envioExistente));
@@ -92,7 +95,9 @@ public class EnvioService {
     }
 
 
+    //------------------------------
     //CRUD personalizado
+    //------------------------------
 
     //Buscar por código de seguimiento
     public Optional<EnvioResponseDTO> buscarPorCodigo(String codigo){

@@ -20,6 +20,11 @@ public class EnvioController {
     //Conexión con 'service'
     private final EnvioService envioService;
 
+
+    //------------------------------
+    //CRUD estándar
+    //------------------------------
+
     //Obtener todos los envíos
     @GetMapping
     public ResponseEntity<List<EnvioResponseDTO>> obtenerTodos() {
@@ -56,7 +61,9 @@ public class EnvioController {
     }
 
 
-    //CRUD personalizados
+    //------------------------------
+    //CRUD personalizado
+    //------------------------------
 
     //Buscar por código de seguimiento
     @GetMapping("/codigo/{codigo}")
@@ -87,8 +94,8 @@ public class EnvioController {
     }
 
     //Búsqueda flexible por dirección
-    @GetMapping("/busqueda")
-    public ResponseEntity<List<EnvioResponseDTO>> buscarPorDireccion(@RequestParam String direccion) {
+    @GetMapping("/busqueda/{direccion}")
+    public ResponseEntity<List<EnvioResponseDTO>> buscarPorDireccion(@PathVariable String direccion) {
         return ResponseEntity.ok(envioService.buscarPorDireccion(direccion));
     }
 
