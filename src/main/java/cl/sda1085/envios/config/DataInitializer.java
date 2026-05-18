@@ -49,7 +49,7 @@ public class DataInitializer implements CommandLineRunner {
         //Envio 3: Armadura Samurai
         Envio e3 = new Envio(
                 null,
-                14L,
+                3L,
                 "Av. Apoquindo 789, Las Condes, Santiago",
                 "PENDIENTE",
                 generarCodigoSeguimiento()
@@ -59,7 +59,7 @@ public class DataInitializer implements CommandLineRunner {
         Envio e4 = new Envio(
                 null,
                 5L,
-                "Maipú 342, San Felipe",
+                "Maipú 342, San Felipe de Aconcagua",
                 "ENTREGADO",
                 generarCodigoSeguimiento());
 
@@ -74,7 +74,7 @@ public class DataInitializer implements CommandLineRunner {
         //Envio 6: Reloj de Bolsillo Vintage
         Envio e6 = new Envio(
                 null,
-                22L,
+                6L,
                 "Diego Portales 55, Quilpué",
                 "EN CAMINO",
                 generarCodigoSeguimiento());
@@ -82,7 +82,7 @@ public class DataInitializer implements CommandLineRunner {
         //Envio 7: Mapa Cartográfico Original
         Envio e7 = new Envio(
                 null,
-                30L,
+                7L,
                 "Paseo Ahumada 11, Santiago Centro",
                 "PENDIENTE",
                 generarCodigoSeguimiento());
